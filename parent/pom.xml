@@ -78,5 +78,6 @@
 
 	<modules>
 		<module>usedition-jpa-model</module>
+		<module>usedition-jpa-service</module>
 	</modules>
 </project>
