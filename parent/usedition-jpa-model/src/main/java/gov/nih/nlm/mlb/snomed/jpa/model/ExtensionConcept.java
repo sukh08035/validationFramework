@@ -2,6 +2,7 @@ package gov.nih.nlm.mlb.snomed.jpa.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,7 +12,10 @@ public class ExtensionConcept {
 
 	/** The id. id	effectiveTime	active	moduleId	definitionStatusId*/
 	@Id
+	@GeneratedValue
 	private Long id;
+	@Column(nullable = false, unique = false, length = 50)
+	private String uuid;
 	@Column(nullable = false, unique = false, length = 8)
 	private String effectiveTime;
 	@Column(nullable = false, unique = false, length = 1)
