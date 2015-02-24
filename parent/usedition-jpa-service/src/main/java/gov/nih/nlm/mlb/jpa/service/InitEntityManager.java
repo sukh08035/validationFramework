@@ -96,10 +96,10 @@ public abstract class InitEntityManager {
 
 	public void save(Object obj)
 	{
-		tx =manager.getTransaction();
-		tx.begin();	
+		//tx =manager.getTransaction();  transaction management should not be here!
+		//tx.begin();	
 		manager.persist(obj);
-		tx.commit();
+		//tx.commit();
 	}
 	  public void close() throws Exception {
 	    if (manager.isOpen()) {
