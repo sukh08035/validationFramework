@@ -94,7 +94,13 @@ public abstract class InitEntityManager {
 	    manager.clear();
 	  }
 
-	
+	public void save(Object obj)
+	{
+		tx =manager.getTransaction();
+		tx.begin();	
+		manager.persist(obj);
+		tx.commit();
+	}
 	  public void close() throws Exception {
 	    if (manager.isOpen()) {
 	      manager.close();
