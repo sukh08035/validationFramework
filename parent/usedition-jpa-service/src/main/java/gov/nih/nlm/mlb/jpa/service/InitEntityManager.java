@@ -96,7 +96,7 @@ public abstract class InitEntityManager {
 
 	public void save(Object obj)
 	{
-		tx =manager.getTransaction();
+		tx =manager.getTransaction();  
 		tx.begin();	
 		manager.persist(obj);
 		tx.commit();

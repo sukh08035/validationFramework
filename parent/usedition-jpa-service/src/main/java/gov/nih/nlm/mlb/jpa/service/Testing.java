@@ -2,14 +2,13 @@ package gov.nih.nlm.mlb.jpa.service;
 
 import gov.nih.nlm.mlb.snomed.jpa.model.Extension_Concept;
 
-public class TestEManager extends InitEntityManager{
+public class Testing extends InitEntityManager{
 
-	public TestEManager() throws Exception {
+	public Testing() throws Exception {
 		super();
 	}
-
 	public static void main(String[] args) throws Exception {
-		TestEManager tm = new TestEManager();
+		Testing tm = new Testing();
 	     
 	  
 		Extension_Concept extConcept= new Extension_Concept();
@@ -23,6 +22,4 @@ public class TestEManager extends InitEntityManager{
         tm.closeFactory();
    
 	}
-
-
 }

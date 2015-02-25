@@ -9,7 +9,6 @@
 	<artifactId>usedition-jpa-service</artifactId>
 	<name>US Edition JPA Service Project</name>
 	<dependencies>
-	
 		<dependency>
 			<groupId>gov.nih.nlm.mlb.snomedct</groupId>
 			<artifactId>usedition-jpa-model</artifactId>
