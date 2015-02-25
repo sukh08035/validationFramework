@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-        xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
         http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-	<persistence-unit name="usedition-jpa-model" transaction-type="RESOURCE_LOCAL">
-	    <!-- JPA persistence provider. -->
-    <provider>org.hibernate.ejb.HibernatePersistence</provider>
-    <!-- List managed classes -->
-    <class>gov.nih.nlm.mlb.snomed.jpa.model.ExtensionConcept</class>
+	<persistence-unit name="usedition-jpa-model"
+		transaction-type="RESOURCE_LOCAL">
+		<!-- JPA persistence provider. -->
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<!-- List managed classes -->
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Concept</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Description</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Identifier</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Relationship</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Stated_Relationship</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Text_Definition</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Association_Reference</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Attribute_Value</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Simple</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Complex_Map</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Extended_Map</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Simple_Map</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Language</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Refset_Descriptor</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Description_Type</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Module_Dependency</class>
 	</persistence-unit>
 </persistence>

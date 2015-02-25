@@ -101,7 +101,7 @@ public abstract class InitEntityManager {
 		manager.persist(obj);
 		tx.commit();
 	}
-	  public void close() throws Exception {
+	  public void closeEntityManager() throws Exception {
 	    if (manager.isOpen()) {
 	      manager.close();
 	    }

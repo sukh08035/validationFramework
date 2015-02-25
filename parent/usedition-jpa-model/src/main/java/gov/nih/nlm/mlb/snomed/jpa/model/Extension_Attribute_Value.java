@@ -2,33 +2,31 @@ package gov.nih.nlm.mlb.snomed.jpa.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 @Entity
-@Table(name = "extension_concept")
-public class ExtensionConcept {
+@Table(name = "extension_attributevalue")
+public class Extension_Attribute_Value {
 
-	/** The id. id	effectiveTime	active	moduleId	definitionStatusId*/
 	@Id
-	@GeneratedValue
-	private Long id;
-	@Column(nullable = false, unique = false, length = 50)
-	private String uuid;
+	@Column(nullable = false, unique = false, length = 52)
+	private String id;
 	@Column(nullable = false, unique = false, length = 8)
 	private String effectiveTime;
 	@Column(nullable = false, unique = false, length = 1)
 	private String active;
-	@Column(nullable = false, unique = false, length = 25)
-	private String moduleId;
-	@Column(nullable = false, unique = false, length = 25)
-	private String definitionStatusId;
-	
-	public Long getId() {
+	@Column(nullable = false, unique = false, length = 18)
+	private long moduleId;
+	@Column(nullable = false, unique = false, length = 18)
+	private long refsetId;
+	@Column(nullable = false, unique = false, length = 18)
+	private long referencedComponentId;
+	@Column(nullable = false, unique = false, length = 18)
+	private long valueId;
+	public String getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getEffectiveTime() {
@@ -43,32 +41,44 @@ public class ExtensionConcept {
 	public void setActive(String active) {
 		this.active = active;
 	}
-	public String getModuleId() {
+	public long getModuleId() {
 		return moduleId;
 	}
-	public void setModuleId(String moduleId) {
+	public void setModuleId(long moduleId) {
 		this.moduleId = moduleId;
 	}
-	public String getDefinitionStatusId() {
-		return definitionStatusId;
+	public long getRefsetId() {
+		return refsetId;
 	}
-	public void setDefinitionStatusId(String definitionStatusId) {
-		this.definitionStatusId = definitionStatusId;
+	public void setRefsetId(long refsetId) {
+		this.refsetId = refsetId;
+	}
+	public long getReferencedComponentId() {
+		return referencedComponentId;
+	}
+	public void setReferencedComponentId(long referencedComponentId) {
+		this.referencedComponentId = referencedComponentId;
+	}
+	public long getValueId() {
+		return valueId;
+	}
+	public void setValueId(long valueId) {
+		this.valueId = valueId;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((active == null) ? 0 : active.hashCode());
-		result = prime
-				* result
-				+ ((definitionStatusId == null) ? 0 : definitionStatusId
-						.hashCode());
 		result = prime * result
 				+ ((effectiveTime == null) ? 0 : effectiveTime.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result
-				+ ((moduleId == null) ? 0 : moduleId.hashCode());
+		result = prime * result + (int) (moduleId ^ (moduleId >>> 32));
+		result = prime
+				* result
+				+ (int) (referencedComponentId ^ (referencedComponentId >>> 32));
+		result = prime * result + (int) (refsetId ^ (refsetId >>> 32));
+		result = prime * result + (int) (valueId ^ (valueId >>> 32));
 		return result;
 	}
 	@Override
@@ -79,16 +89,11 @@ public class ExtensionConcept {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		ExtensionConcept other = (ExtensionConcept) obj;
+		Extension_Attribute_Value other = (Extension_Attribute_Value) obj;
 		if (active == null) {
 			if (other.active != null)
 				return false;
 		} else if (!active.equals(other.active))
-			return false;
-		if (definitionStatusId == null) {
-			if (other.definitionStatusId != null)
-				return false;
-		} else if (!definitionStatusId.equals(other.definitionStatusId))
 			return false;
 		if (effectiveTime == null) {
 			if (other.effectiveTime != null)
@@ -100,22 +105,15 @@ public class ExtensionConcept {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (moduleId == null) {
-			if (other.moduleId != null)
-				return false;
-		} else if (!moduleId.equals(other.moduleId))
+		if (moduleId != other.moduleId)
+			return false;
+		if (referencedComponentId != other.referencedComponentId)
+			return false;
+		if (refsetId != other.refsetId)
+			return false;
+		if (valueId != other.valueId)
 			return false;
 		return true;
 	}
-	public String getUuid() {
-		return uuid;
-	}
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-	}
 	
-
-
-
-
 }
