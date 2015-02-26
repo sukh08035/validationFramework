@@ -1,22 +1,15 @@
 package gov.nih.nlm.mlb.snomed.jpa.model;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "extension_relationship")
 public class Extension_Relationship {
-	@Id
-	@Column(nullable = false, unique = false, length = 18)
-	private long id;
-	@Column(nullable = false, unique = false, length = 8)
-	private String effectiveTime;
-	@Column(nullable = false, unique = false, length = 1)
-	private int active;
-	@Column(nullable = false, unique = false, length = 18)
-	private long moduleId;
+	@EmbeddedId
+	private Component_Id Id;
 	@Column(nullable = false, unique = false, length = 18)
 	private long sourceId;
 	@Column(nullable = false, unique = false, length = 18)
@@ -29,30 +22,7 @@ public class Extension_Relationship {
 	private long characteristicTypeId;
 	@Column(nullable = false, unique = false, length = 18)
 	private long modifierId;
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
-	public String getEffectiveTime() {
-		return effectiveTime;
-	}
-	public void setEffectiveTime(String effectiveTime) {
-		this.effectiveTime = effectiveTime;
-	}
-	public int getActive() {
-		return active;
-	}
-	public void setActive(int active) {
-		this.active = active;
-	}
-	public long getModuleId() {
-		return moduleId;
-	}
-	public void setModuleId(long moduleId) {
-		this.moduleId = moduleId;
-	}
+	
 	public long getSourceId() {
 		return sourceId;
 	}
@@ -93,16 +63,12 @@ public class Extension_Relationship {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + active;
+		result = prime * result + ((Id == null) ? 0 : Id.hashCode());
 		result = prime * result
 				+ (int) (characteristicTypeId ^ (characteristicTypeId >>> 32));
 		result = prime * result
 				+ (int) (destinationId ^ (destinationId >>> 32));
-		result = prime * result
-				+ ((effectiveTime == null) ? 0 : effectiveTime.hashCode());
-		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + (int) (modifierId ^ (modifierId >>> 32));
-		result = prime * result + (int) (moduleId ^ (moduleId >>> 32));
 		result = prime * result
 				+ (int) (relationshipGroup ^ (relationshipGroup >>> 32));
 		result = prime * result + (int) (sourceId ^ (sourceId >>> 32));
@@ -118,22 +84,16 @@ public class Extension_Relationship {
 		if (getClass() != obj.getClass())
 			return false;
 		Extension_Relationship other = (Extension_Relationship) obj;
-		if (active != other.active)
+		if (Id == null) {
+			if (other.Id != null)
+				return false;
+		} else if (!Id.equals(other.Id))
 			return false;
 		if (characteristicTypeId != other.characteristicTypeId)
 			return false;
 		if (destinationId != other.destinationId)
 			return false;
-		if (effectiveTime == null) {
-			if (other.effectiveTime != null)
-				return false;
-		} else if (!effectiveTime.equals(other.effectiveTime))
-			return false;
-		if (id != other.id)
-			return false;
 		if (modifierId != other.modifierId)
-			return false;
-		if (moduleId != other.moduleId)
 			return false;
 		if (relationshipGroup != other.relationshipGroup)
 			return false;
@@ -142,6 +102,12 @@ public class Extension_Relationship {
 		if (typeId != other.typeId)
 			return false;
 		return true;
+	}
+	public Component_Id getId() {
+		return Id;
+	}
+	public void setId(Component_Id id) {
+		Id = id;
 	}
 
 }

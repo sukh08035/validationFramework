@@ -1,5 +1,6 @@
 package gov.nih.nlm.mlb.jpa.service;
 
+import gov.nih.nlm.mlb.snomed.jpa.model.Component_Id;
 import gov.nih.nlm.mlb.snomed.jpa.model.Extension_Concept;
 
 public class Testing extends InitEntityManager{
@@ -12,11 +13,14 @@ public class Testing extends InitEntityManager{
 	     
 	  
 		Extension_Concept extConcept= new Extension_Concept();
-        extConcept.setActive("1");
-        extConcept.setId(123421);
-        extConcept.setDefinitionStatusId(23);
-        extConcept.setEffectiveTime("20150213");
-        extConcept.setModuleId(123145);
+		Component_Id id = new Component_Id();
+		id.setActive("1");
+		id.setId(123421);
+		
+		id.setEffectiveTime("20150213");
+		id.setModuleId(123145);
+		extConcept.setId(id);
+		extConcept.setDefinitionStatusId(23);
         tm.save(extConcept);
         tm.closeEntityManager();
         tm.closeFactory();
