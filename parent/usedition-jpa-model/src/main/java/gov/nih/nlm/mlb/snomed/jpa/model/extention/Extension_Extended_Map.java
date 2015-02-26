@@ -1,14 +1,12 @@
-package gov.nih.nlm.mlb.snomed.jpa.model.core;
-
-import gov.nih.nlm.mlb.snomed.jpa.model.extention.Component_Refset_Id;
+package gov.nih.nlm.mlb.snomed.jpa.model.extention;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 @Entity
-@Table(name = "core_extendedmap")
-public class Core_Extended_Map {
+@Table(name = "extension_extendedmap")
+public class Extension_Extended_Map {
 
 	@EmbeddedId
 	private Component_Refset_Id Id;
@@ -95,7 +93,7 @@ public class Core_Extended_Map {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Core_Extended_Map other = (Core_Extended_Map) obj;
+		Extension_Extended_Map other = (Extension_Extended_Map) obj;
 		if (Id == null) {
 			if (other.Id != null)
 				return false;

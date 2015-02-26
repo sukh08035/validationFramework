@@ -1,6 +1,4 @@
-package gov.nih.nlm.mlb.snomed.jpa.model.core;
-
-import gov.nih.nlm.mlb.snomed.jpa.model.extention.Component_Id;
+package gov.nih.nlm.mlb.snomed.jpa.model.extention;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
@@ -8,8 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "core_relationship")
-public class Core_Relationship {
+@Table(name = "extension_statedrelationship")
+public class Extension_Stated_Relationship {
+
 	@EmbeddedId
 	private Component_Id Id;
 	@Column(nullable = false, unique = false, length = 18)
@@ -17,7 +16,7 @@ public class Core_Relationship {
 	@Column(nullable = false, unique = false, length = 18)
 	private long destinationId;
 	@Column(nullable = false, unique = false, length = 1)
-	private long relationshipGroup;
+	private int relationshipGroup;
 	@Column(nullable = false, unique = false, length = 18)
 	private long typeId;
 	@Column(nullable = false, unique = false, length = 18)
@@ -37,10 +36,10 @@ public class Core_Relationship {
 	public void setDestinationId(long destinationId) {
 		this.destinationId = destinationId;
 	}
-	public long getRelationshipGroup() {
+	public int getRelationshipGroup() {
 		return relationshipGroup;
 	}
-	public void setRelationshipGroup(long relationshipGroup) {
+	public void setRelationshipGroup(int relationshipGroup) {
 		this.relationshipGroup = relationshipGroup;
 	}
 	public long getTypeId() {
@@ -71,8 +70,7 @@ public class Core_Relationship {
 		result = prime * result
 				+ (int) (destinationId ^ (destinationId >>> 32));
 		result = prime * result + (int) (modifierId ^ (modifierId >>> 32));
-		result = prime * result
-				+ (int) (relationshipGroup ^ (relationshipGroup >>> 32));
+		result = prime * result + relationshipGroup;
 		result = prime * result + (int) (sourceId ^ (sourceId >>> 32));
 		result = prime * result + (int) (typeId ^ (typeId >>> 32));
 		return result;
@@ -85,7 +83,7 @@ public class Core_Relationship {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Core_Relationship other = (Core_Relationship) obj;
+		Extension_Stated_Relationship other = (Extension_Stated_Relationship) obj;
 		if (Id == null) {
 			if (other.Id != null)
 				return false;

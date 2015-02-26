@@ -1,26 +1,23 @@
-package gov.nih.nlm.mlb.snomed.jpa.model.core;
-
-import gov.nih.nlm.mlb.snomed.jpa.model.extention.Component_Refset_Id;
+package gov.nih.nlm.mlb.snomed.jpa.model.extention;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
 import javax.persistence.Table;
-
+import javax.persistence.Entity;
 @Entity
-@Table(name = "core_simplemap")
-public class Core_Simple_Map {
+@Table(name = "extension_language")
+public class Extension_Language {
 
 	@EmbeddedId
 	private Component_Refset_Id Id;
-	@Column(nullable = false, unique = false, length = 100)
-	private String mapTarget;
+	@Column(nullable = false, unique = false, length = 18)
+	private long acceptabilityId;
 	
-	public String getMapTarget() {
-		return mapTarget;
+	public long getAcceptabilityId() {
+		return acceptabilityId;
 	}
-	public void setMapTarget(String mapTarget) {
-		this.mapTarget = mapTarget;
+	public void setAcceptabilityId(long acceptabilityId) {
+		this.acceptabilityId = acceptabilityId;
 	}
 	@Override
 	public int hashCode() {
@@ -28,7 +25,7 @@ public class Core_Simple_Map {
 		int result = 1;
 		result = prime * result + ((Id == null) ? 0 : Id.hashCode());
 		result = prime * result
-				+ ((mapTarget == null) ? 0 : mapTarget.hashCode());
+				+ (int) (acceptabilityId ^ (acceptabilityId >>> 32));
 		return result;
 	}
 	@Override
@@ -39,20 +36,18 @@ public class Core_Simple_Map {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Core_Simple_Map other = (Core_Simple_Map) obj;
+		Extension_Language other = (Extension_Language) obj;
 		if (Id == null) {
 			if (other.Id != null)
 				return false;
 		} else if (!Id.equals(other.Id))
 			return false;
-		if (mapTarget == null) {
-			if (other.mapTarget != null)
-				return false;
-		} else if (!mapTarget.equals(other.mapTarget))
+		if (acceptabilityId != other.acceptabilityId)
 			return false;
 		return true;
 	}
 	public void setId(Component_Refset_Id id) {
 		Id = id;
 	}
+	
 }

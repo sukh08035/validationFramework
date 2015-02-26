@@ -1,6 +1,6 @@
 package gov.nih.nlm.mlb.snomed.jpa.model.core;
 
-import gov.nih.nlm.mlb.snomed.jpa.model.Component_Refset_Id;
+import gov.nih.nlm.mlb.snomed.jpa.model.extention.Component_Refset_Id;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;

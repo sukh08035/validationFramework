@@ -1,6 +1,4 @@
-package gov.nih.nlm.mlb.snomed.jpa.model.core;
-
-import gov.nih.nlm.mlb.snomed.jpa.model.extention.Component_Id;
+package gov.nih.nlm.mlb.snomed.jpa.model.extention;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
@@ -8,8 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "core_description")
-public class Core_Description {
+@Table(name = "extension_textdefinition")
+public class Extension_Text_Definition {
 	@EmbeddedId
 	private Component_Id Id;
 	@Column(nullable = false, unique = false, length = 18)
@@ -18,11 +16,10 @@ public class Core_Description {
 	private String languageCode;
 	@Column(nullable = false, unique = false, length = 18)
 	private long typeId;
-	@Column(nullable = false, unique = false, length = 255)
+	@Column(nullable = false, unique = false, length = 1024)
 	private String term;
 	@Column(nullable = false, unique = false, length = 18)
 	private long caseSignificanceId;
-	
 	
 	public long getConceptId() {
 		return conceptId;
@@ -51,10 +48,9 @@ public class Core_Description {
 	public long getCaseSignificanceId() {
 		return caseSignificanceId;
 	}
-	public void setCaseSignificanceId(int caseSignificanceId) {
+	public void setCaseSignificanceId(long caseSignificanceId) {
 		this.caseSignificanceId = caseSignificanceId;
 	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -77,7 +73,7 @@ public class Core_Description {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Core_Description other = (Core_Description) obj;
+		Extension_Text_Definition other = (Extension_Text_Definition) obj;
 		if (Id == null) {
 			if (other.Id != null)
 				return false;
@@ -101,14 +97,7 @@ public class Core_Description {
 			return false;
 		return true;
 	}
-	public Component_Id getId() {
-		return Id;
-	}
 	public void setId(Component_Id id) {
 		Id = id;
 	}
-	public void setCaseSignificanceId(long caseSignificanceId) {
-		this.caseSignificanceId = caseSignificanceId;
-	}
-	
 }

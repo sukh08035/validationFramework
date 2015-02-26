@@ -1,6 +1,4 @@
-package gov.nih.nlm.mlb.snomed.jpa.model.core;
-
-import gov.nih.nlm.mlb.snomed.jpa.model.extention.Component_Refset_Id;
+package gov.nih.nlm.mlb.snomed.jpa.model.extention;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
@@ -8,8 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "core_refsetdescriptor")
-public class Core_Refset_Descriptor {
+@Table(name = "extension_refsetdescriptor")
+public class Extension_Refset_Descriptor {
 	
 	@EmbeddedId
 	private Component_Refset_Id Id;
@@ -59,7 +57,7 @@ public class Core_Refset_Descriptor {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Core_Refset_Descriptor other = (Core_Refset_Descriptor) obj;
+		Extension_Refset_Descriptor other = (Extension_Refset_Descriptor) obj;
 		if (Id == null) {
 			if (other.Id != null)
 				return false;

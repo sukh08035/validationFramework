@@ -1,6 +1,4 @@
-package gov.nih.nlm.mlb.snomed.jpa.model.core;
-
-import gov.nih.nlm.mlb.snomed.jpa.model.extention.Component_Id;
+package gov.nih.nlm.mlb.snomed.jpa.model.extention;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
@@ -8,8 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "core_relationship")
-public class Core_Relationship {
+@Table(name = "extension_relationship")
+public class Extension_Relationship {
 	@EmbeddedId
 	private Component_Id Id;
 	@Column(nullable = false, unique = false, length = 18)
@@ -85,7 +83,7 @@ public class Core_Relationship {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Core_Relationship other = (Core_Relationship) obj;
+		Extension_Relationship other = (Extension_Relationship) obj;
 		if (Id == null) {
 			if (other.Id != null)
 				return false;

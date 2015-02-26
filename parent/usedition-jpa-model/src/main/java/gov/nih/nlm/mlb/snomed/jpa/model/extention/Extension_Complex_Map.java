@@ -1,18 +1,15 @@
-package gov.nih.nlm.mlb.snomed.jpa.model.core;
-
-import gov.nih.nlm.mlb.snomed.jpa.model.extention.Component_Refset_Id;
+package gov.nih.nlm.mlb.snomed.jpa.model.extention;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 @Entity
-@Table(name = "core_extendedmap")
-public class Core_Extended_Map {
+@Table(name = "extension_complexmap")
+public class Extension_Complex_Map {
 
 	@EmbeddedId
 	private Component_Refset_Id Id;
-	@Column(nullable = false, unique = false, length = 1)
 	private int mapGroup;
 	@Column(nullable = false, unique = false, length = 1)
 	private int mapPriority;
@@ -24,9 +21,7 @@ public class Core_Extended_Map {
 	private String mapTarget;
 	@Column(nullable = false, unique = false, length = 18)
 	private long correlationId;
-	@Column(nullable = false, unique = false, length = 18)
-	private long mapCategoryId;
-
+	
 	public int getMapGroup() {
 		return mapGroup;
 	}
@@ -63,12 +58,6 @@ public class Core_Extended_Map {
 	public void setCorrelationId(long correlationId) {
 		this.correlationId = correlationId;
 	}
-	public long getMapCategoryId() {
-		return mapCategoryId;
-	}
-	public void setMapCategoryId(long mapCategoryId) {
-		this.mapCategoryId = mapCategoryId;
-	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -78,8 +67,6 @@ public class Core_Extended_Map {
 				+ (int) (correlationId ^ (correlationId >>> 32));
 		result = prime * result
 				+ ((mapAdvice == null) ? 0 : mapAdvice.hashCode());
-		result = prime * result
-				+ (int) (mapCategoryId ^ (mapCategoryId >>> 32));
 		result = prime * result + mapGroup;
 		result = prime * result + mapPriority;
 		result = prime * result + ((mapRule == null) ? 0 : mapRule.hashCode());
@@ -95,7 +82,7 @@ public class Core_Extended_Map {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Core_Extended_Map other = (Core_Extended_Map) obj;
+		Extension_Complex_Map other = (Extension_Complex_Map) obj;
 		if (Id == null) {
 			if (other.Id != null)
 				return false;
@@ -107,8 +94,6 @@ public class Core_Extended_Map {
 			if (other.mapAdvice != null)
 				return false;
 		} else if (!mapAdvice.equals(other.mapAdvice))
-			return false;
-		if (mapCategoryId != other.mapCategoryId)
 			return false;
 		if (mapGroup != other.mapGroup)
 			return false;
@@ -126,7 +111,12 @@ public class Core_Extended_Map {
 			return false;
 		return true;
 	}
+	public Component_Refset_Id getId() {
+		return Id;
+	}
 	public void setId(Component_Refset_Id id) {
 		Id = id;
 	}
+	
+	
 }

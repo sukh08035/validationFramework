@@ -1,6 +1,4 @@
-package gov.nih.nlm.mlb.snomed.jpa.model.core;
-
-import gov.nih.nlm.mlb.snomed.jpa.model.extention.Component_Refset_Id;
+package gov.nih.nlm.mlb.snomed.jpa.model.extention;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
@@ -8,8 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "core_simplemap")
-public class Core_Simple_Map {
+@Table(name = "extension_simplemap")
+public class Extension_Simple_Map {
 
 	@EmbeddedId
 	private Component_Refset_Id Id;
@@ -39,7 +37,7 @@ public class Core_Simple_Map {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Core_Simple_Map other = (Core_Simple_Map) obj;
+		Extension_Simple_Map other = (Extension_Simple_Map) obj;
 		if (Id == null) {
 			if (other.Id != null)
 				return false;
