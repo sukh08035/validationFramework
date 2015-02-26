@@ -1,7 +1,7 @@
 package gov.nih.nlm.mlb.jpa.service;
 
-import gov.nih.nlm.mlb.snomed.jpa.model.Component_Id;
-import gov.nih.nlm.mlb.snomed.jpa.model.Extension_Concept;
+import gov.nih.nlm.mlb.snomed.jpa.model.extention.Component_Id;
+import gov.nih.nlm.mlb.snomed.jpa.model.extention.Extension_Concept;
 
 public class Testing extends InitEntityManager{
 
