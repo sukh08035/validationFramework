@@ -8,6 +8,7 @@
 		<!-- JPA persistence provider. -->
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<!-- List managed classes -->
+		<!-- Extension (Edition) Classes -->
 		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Concept</class>
 		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Description</class>
 		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Identifier</class>
@@ -24,5 +25,22 @@
 		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Refset_Descriptor</class>
 		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Description_Type</class>
 		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Module_Dependency</class>
+		<!-- Core Classes -->
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Concept</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Description</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Identifier</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Relationship</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Stated_Relationship</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Text_Definition</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Association_Reference</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Attribute_Value</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Simple</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Complex_Map</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Extended_Map</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Simple_Map</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Language</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Refset_Descriptor</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Description_Type</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Module_Dependency</class>
 	</persistence-unit>
 </persistence>
