@@ -9,22 +9,22 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<!-- List managed classes -->
 		<!-- Extension (Edition) Classes -->
-		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Concept</class>
-		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Description</class>
-		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Identifier</class>
-		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Relationship</class>
-		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Stated_Relationship</class>
-		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Text_Definition</class>
-		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Association_Reference</class>
-		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Attribute_Value</class>
-		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Simple</class>
-		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Complex_Map</class>
-		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Extended_Map</class>
-		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Simple_Map</class>
-		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Language</class>
-		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Refset_Descriptor</class>
-		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Description_Type</class>
-		<class>gov.nih.nlm.mlb.snomed.jpa.model.Extension_Module_Dependency</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.Extension_Concept</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.Extension_Description</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.Extension_Identifier</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.Extension_Relationship</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.Extension_Stated_Relationship</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.Extension_Text_Definition</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.Extension_Association_Reference</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.Extension_Attribute_Value</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.Extension_Simple</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.Extension_Complex_Map</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.Extension_Extended_Map</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.Extension_Simple_Map</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.Extension_Language</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.Extension_Refset_Descriptor</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.Extension_Description_Type</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.Extension_Module_Dependency</class>
 		<!-- Core Classes -->
 		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Concept</class>
 		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Description</class>
@@ -42,5 +42,22 @@
 		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Refset_Descriptor</class>
 		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Description_Type</class>
 		<class>gov.nih.nlm.mlb.snomed.jpa.model.core.Core_Module_Dependency</class>
+		<!-- Delta Extention -->
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.delta.Extension_Delta_Concept</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.delta.Extension_Delta_Description</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.delta.Extension_Delta_Identifier</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.delta.Extension_Delta_Relationship</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.delta.Extension_Delta_Stated_Relationship</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.delta.Extension_Delta_Text_Definition</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.delta.Extension_Delta_Association_Reference</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.delta.Extension_Delta_Attribute_Value</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.delta.Extension_Delta_Simple</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.delta.Extension_Delta_Complex_Map</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.delta.Extension_Delta_Extended_Map</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.delta.Extension_Delta_Simple_Map</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.delta.Extension_Delta_Language</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.delta.Extension_Delta_Refset_Descriptor</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.delta.Extension_Delta_Description_Type</class>
+		<class>gov.nih.nlm.mlb.snomed.jpa.model.extention.delta.Extension_Delta_Module_Dependency</class>
 	</persistence-unit>
 </persistence>
