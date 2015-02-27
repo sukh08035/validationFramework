@@ -1,6 +1,7 @@
 package gov.nih.nlm.mlb.jpa.service;
 
-import gov.nih.nlm.mlb.jpa.service.utility.ConfigUtility;
+
+import gov.nih.nlm.mlb.snomedct.config.ConfigUtility;
 
 import java.util.Properties;
 
@@ -17,25 +18,20 @@ public abstract class InitEntityManager {
 	protected EntityManager manager;
 	protected boolean transactionPerOperation = true;
 	protected EntityTransaction tx;
-
+	protected Logger logger = Logger.getLogger(this.getClass()+" Setting Logger ofr LoadDataFromRF2");
 	public InitEntityManager() throws Exception {
 		// created once or if the factory has closed
 		if (factory == null || !factory.isOpen()) {
 			openFactory();
 		}
-
-		// created on each instantiation
 		manager = factory.createEntityManager();
 		tx = manager.getTransaction();
 	}
 
 	public synchronized void openFactory() throws Exception {
 
-		// if factory has not been instantiated or has been closed, open it
 		if (factory == null || !factory.isOpen()) {
-
-			Logger.getLogger(this.getClass()).info(
-					"Setting root service entity manager factory.");
+			logger.info("Setting root service entity manager factory.");
 			Properties config = ConfigUtility.getJpaPropterties();
 			factory =
 					Persistence.createEntityManagerFactory("usedition-jpa-model", config);

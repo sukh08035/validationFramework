@@ -1,6 +1,7 @@
 package gov.nih.nlm.mlb.jpa.service;
 
-import gov.nih.nlm.mlb.jpa.service.utility.ConfigUtility;
+
+import gov.nih.nlm.mlb.snomedct.config.ConfigUtility;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -14,7 +15,7 @@ import com.mysql.jdbc.Statement;
 
 public class LoadDataFromRF2 {
 
-	Logger logger = Logger.getLogger(this.getClass()+" Setting root service entity manager factory");
+	Logger logger = Logger.getLogger(this.getClass()+" Setting Logger ofr LoadDataFromRF2");
 
 	public Connection openConnection(final Properties props)
 	{
