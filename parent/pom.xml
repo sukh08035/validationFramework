@@ -86,5 +86,6 @@
 		<module>usedition-jpa-model</module>
 		<module>usedition-jpa-service</module>
     <module>usedition-config</module>
+    <module>usedition-load-data</module>
   </modules>
 </project>

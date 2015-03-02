@@ -1,4 +1,5 @@
-package gov.nih.nlm.mlb.jpa.service;
+package gov.nih.nlm.mlb.snomedct.loaddata;
+
 
 
 import gov.nih.nlm.mlb.snomedct.config.ConfigUtility;
